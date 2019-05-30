@@ -4,6 +4,7 @@ import Link from 'react-router-dom';
 import {connect} from 'react-redux';
 import Spinner from './../layout/Spinner';
 import {getCurrentProfile} from '../../actions/profile';
+import DashboardActions from './DashboardActions';
 
 const Dashboard = ({getCurrentProfile, auth: {user}, profile: {profile, loading}}) => {
     useEffect(() => {
@@ -17,7 +18,7 @@ const Dashboard = ({getCurrentProfile, auth: {user}, profile: {profile, loading}
             </p>
             {profile !== null ? 
                 (<Fragment>
-
+                    <DashboardActions/>
                 </Fragment>)
                  : 
                 (<Fragment>
