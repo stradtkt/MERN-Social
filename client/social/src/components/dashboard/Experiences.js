@@ -14,10 +14,10 @@ const Experiences = ({experience}) => {
                 (<Moment format="YYYY/MM/DD"></Moment>)}
             </td>
             <td>
-                <button className="btn btn-danger"></button>
+                <button className="btn btn-danger">{exp.to}</button>
             </td>
         </tr>
-    ))
+    ));
     return (
         <Fragment>
             <h2 className="my-2">Experience Credentials</h2>
@@ -29,6 +29,7 @@ const Experiences = ({experience}) => {
                         <th className="hide-sm">Years</th>
                     </tr>
                 </thead>
+                <tbody>{experiences}</tbody>
             </table>
         </Fragment>
     )
@@ -36,6 +37,6 @@ const Experiences = ({experience}) => {
 
 Experiences.propTypes = {
     experience: PropTypes.array.isRequired
-}
+};
 
-export default Experiences
+export default Experiences;
