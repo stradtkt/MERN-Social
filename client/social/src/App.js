@@ -12,6 +12,7 @@ import Alert from './components/layout/Alert';
 import Profile from './components/profile/Profile';
 import Profiles from './components/profiles/Profiles';
 import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/routing/PrivateRoute';
 import setAuthToken from './utils/setAuthToken';
@@ -47,6 +48,7 @@ const App = () => {
                             <PrivateRoute exact path='/add-experience' component={AddExperience}/>
                             <PrivateRoute exact path='/add-education' component={AddEducation}/>
                             <PrivateRoute exact path='/posts' component={Posts}/>
+                            <PrivateRoute exact path='/posts/:id' component={Post}/>
                         </Switch>
                     </section>
                     <Landing/>
