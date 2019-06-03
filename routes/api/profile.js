@@ -99,4 +99,15 @@ router.get('/user/:user_id', async (req, res) => {
     }
 });
 
+router.delete('/', async (req, res) => {
+    try {
+        await Profile.findOneAndRemove({user: req.user.id});
+        await User.findOneAndRemove({_id: req.user.id});
+        res.json({msg: 'User deleted'});
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
 module.exports = router;
